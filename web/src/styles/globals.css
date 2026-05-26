@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* ── Surfaces ───────────────────────────────────────── */
+    --background: 35 30% 99%;      /* barely-perceptible warm white */
+    --foreground: 220 30% 12%;
+
+    --card: 0 0% 100%;             /* pure white — separates cards from warm bg */
+    --card-foreground: 220 30% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 30% 12%;
+
+    /* ── Brand: deep teal ───────────────────────────────── */
+    --primary: 180 65% 32%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 180 65% 27%;
+    --primary-soft: 180 40% 92%;
+    --primary-soft-foreground: 180 65% 25%;
+
+    /* ── Neutral tones ──────────────────────────────────── */
+    --secondary: 220 20% 96%;
+    --secondary-foreground: 220 30% 12%;
+
+    --muted: 220 15% 96%;
+    --muted-foreground: 220 10% 48%;
+
+    --accent: 180 50% 96%;
+    --accent-foreground: 180 65% 25%;
+
+    /* ── Warm accent: deep amber ────────────────────────── */
+    --accent-warm: 35 95% 50%;
+    --accent-warm-foreground: 0 0% 100%;
+    --accent-warm-soft: 35 85% 95%;
+    --accent-warm-soft-foreground: 35 80% 35%;
+
+    /* ── Feedback ───────────────────────────────────────── */
+    --destructive: 0 65% 51%;
+    --destructive-foreground: 0 0% 98%;
+
+    /* ── Chrome ─────────────────────────────────────────── */
+    --border: 220 15% 90%;
+    --input: 220 15% 90%;
+    --ring: 180 65% 32%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 220 25% 9%;
+    --foreground: 220 15% 96%;
+
+    --card: 220 20% 12%;
+    --card-foreground: 220 15% 96%;
+
+    --popover: 220 20% 12%;
+    --popover-foreground: 220 15% 96%;
+
+    --primary: 180 55% 50%;
+    --primary-foreground: 180 100% 5%;
+    --primary-hover: 180 55% 44%;
+    --primary-soft: 180 30% 20%;
+    --primary-soft-foreground: 180 55% 70%;
+
+    --secondary: 220 15% 20%;
+    --secondary-foreground: 220 15% 96%;
+
+    --muted: 220 15% 18%;
+    --muted-foreground: 220 10% 60%;
+
+    --accent: 180 30% 18%;
+    --accent-foreground: 180 55% 70%;
+
+    --accent-warm: 35 90% 60%;
+    --accent-warm-foreground: 35 100% 10%;
+    --accent-warm-soft: 35 50% 20%;
+    --accent-warm-soft-foreground: 35 85% 80%;
+
+    --destructive: 0 62% 52%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 220 15% 22%;
+    --input: 220 15% 22%;
+    --ring: 180 55% 50%;
+  }
+}
+
+@layer components {
+  /* Teal-to-amber gradient top border — used on the cookie banner */
+  .gradient-border-top {
+    border-top: 2px solid transparent;
+    background-image:
+      linear-gradient(hsl(var(--card)), hsl(var(--card))),
+      linear-gradient(to left, hsl(var(--accent-warm)), hsl(var(--primary)));
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  /* Typography scale — components reference these classes directly */
+  h1 {
+    @apply text-3xl font-bold tracking-tight md:text-4xl;
+  }
+  h2 {
+    @apply text-2xl font-semibold tracking-tight md:text-3xl;
+  }
+  h3 {
+    @apply text-xl font-semibold;
+  }
+}
