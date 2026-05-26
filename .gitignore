@@ -38,9 +38,3 @@ Thumbs.db
 *.sqlite
 *.db
 
-# Claude Code — local development tools (DO NOT push)
-CLAUDE.md
-CLAUDE_CODE_PROMPT.md
-CLAUDE_CODE_PROMPT_FRONTEND.md
-.claude/
-"@ | Out-File -FilePath .gitignore -Encoding utf8
