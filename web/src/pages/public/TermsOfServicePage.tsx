@@ -10,16 +10,16 @@ function Section({ title, children }: { title: string; children: ReactNode }) {
   );
 }
 
-function LegalWarningBanner() {
-  return (
-    <div className="flex items-start gap-3 rounded-lg border border-accent-warm/30 bg-accent-warm-soft p-4 text-accent-warm-soft-foreground">
-      <AlertTriangle className="h-5 w-5 shrink-0 mt-0.5" />
-      <p className="text-sm font-medium">
-        זוהי תבנית בלבד. יש להעביר לבדיקת עורך דין לפני השקה לציבור.
-      </p>
-    </div>
-  );
-}
+// function LegalWarningBanner() {
+//   return (
+//     <div className="flex items-start gap-3 rounded-lg border border-accent-warm/30 bg-accent-warm-soft p-4 text-accent-warm-soft-foreground">
+//       <AlertTriangle className="h-5 w-5 shrink-0 mt-0.5" />
+//       <p className="text-sm font-medium">
+//         זוהי תבנית בלבד. יש להעביר לבדיקת עורך דין לפני השקה לציבור.
+//       </p>
+//     </div>
+//   );
+// }
 
 export function TermsOfServicePage() {
   return (
@@ -29,7 +29,7 @@ export function TermsOfServicePage() {
         <p className="text-muted-foreground text-sm">עודכן לאחרונה: מאי 2026</p>
       </div>
 
-      <LegalWarningBanner />
+      {/* <LegalWarningBanner /> */}
 
       <Section title="הקדמה">
         <p>
@@ -160,7 +160,8 @@ export function TermsOfServicePage() {
         <p>
           לכל שאלה הנוגעת לתנאי שימוש אלה, ניתן לפנות אלינו:
         </p>
-        <p className="text-muted-foreground italic">[כתובת אימייל ליצירת קשר — למלא לפני השקה]</p>
+        <p className="text-muted-foreground italic">
+batybenor@gmail.com</p>
       </Section>
     </div>
   );
